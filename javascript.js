@@ -36,8 +36,6 @@ function getUserChoice() {
 console.log(userChoice);
 } 
 
-startGame();
-
 function startGame() {
 
     let userChoice = getUserChoice();
@@ -63,7 +61,14 @@ function startGame() {
     } else if ((choice == "scissors") && (userChoice == "paper")) {
         console.log("You lost! Scissors beat Paper");
     }
+    
+    if choice != "Exit" {
+        startGame();
+    }
 } 
+
+startGame();
+
 
 // make rules
 // if rock meets rock tie
