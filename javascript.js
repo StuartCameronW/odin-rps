@@ -30,6 +30,8 @@ function getUserChoice() {
     while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
         userChoice = prompt("Error this move is not recognized, please enter either Rock, paper, or Scissors:").toLowerCase()
     }
+    
+    return userChoice;
 
 console.log(userChoice);
 } 
