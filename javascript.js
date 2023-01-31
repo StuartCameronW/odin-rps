@@ -1,6 +1,6 @@
 function getComputerChoice() {
     let randomNum = Math.random();
-    console.log(randomNum);
+    //console.log(randomNum);
     let choice;
 
     if  (randomNum <= 0.333) {
@@ -12,6 +12,8 @@ function getComputerChoice() {
     }
 
     console.log(choice);
+
+    return(choice);
 
     // get a random rps value which is hidden from the user
     // random number, if <= 0.333 = Rock
@@ -31,9 +33,9 @@ function getUserChoice() {
         userChoice = prompt("Error this move is not recognized, please enter either Rock, paper, or Scissors:").toLowerCase()
     }
 
-    return(userChoice);
+    console.log(userChoice);
 
-console.log(userChoice);
+    return(userChoice);
 } 
 
 function startGame() {
