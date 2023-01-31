@@ -39,7 +39,7 @@ function getUserChoice() {
 } 
 
 function startGame() {
-
+    
     let userChoice = getUserChoice();
 
     let choice = getComputerChoice();
@@ -52,25 +52,39 @@ function startGame() {
         console.log("Tie! You both chose Scissors");
     } else if ((choice == "rock") && (userChoice == "paper")) {
         console.log("You won! Paper beats Rock");
+        userReal++;
     } else if ((choice == "rock") && (userChoice == "scissors")) {
         console.log("You lost! Rock beats Scissors");
+        userCPU++;
     } else if ((choice == "paper") && (userChoice == "rock")) {
         console.log("You lost! Paper beats Rock");
+        userCPU++;
     } else if ((choice == "paper") && (userChoice == "scissors")) {
         console.log("You won! Scissors beat Paper");
+        userReal++;
     } else if ((choice == "scissors") && (userChoice == "rock")) {
         console.log("You won! Rock beats Scissors");
+        userReal++;
     } else if ((choice == "scissors") && (userChoice == "paper")) {
         console.log("You lost! Scissors beat Paper");
-    }
-    
-    if choice != "Exit" {
-        startGame();
+        userCPU++;
     }
 } 
 
-startGame();
+let userReal = 0;
+let userCPU = 0;
 
+for (let i = 0; i < 5; i++) {
+    startGame();
+}
+
+if (userReal > userCPU) {
+    console.log("Human Won");
+} else if (userReal < userCPU) {
+    console.log("Computer Won");
+} else {
+    console.log("Tie");
+}
 
 // make rules
 // if rock meets rock tie
